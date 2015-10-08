@@ -39,12 +39,13 @@ func resourcePacketDevice() *schema.Resource {
 			"plan": &schema.Schema{
 				Type:     schema.TypeString,
 				Required: true,
+				ForceNew: true,
 			},
 
 			"project_id": &schema.Schema{
 				Type:     schema.TypeString,
 				Required: true,
-				// DefaultFunc: schema.EnvDefaultFunc("PACKET_PROJECT_ID", nil),
+				ForceNew: true,
 			},
 
 			"state": &schema.Schema{
@@ -75,12 +76,14 @@ func resourcePacketDevice() *schema.Resource {
 			"tags": &schema.Schema{
 				Type:     schema.TypeList,
 				Optional: true,
+				ForceNew: true,
 				Elem:     &schema.Schema{Type: schema.TypeString},
 			},
 
 			"user_data": &schema.Schema{
 				Type:     schema.TypeString,
 				Optional: true,
+				ForceNew: true,
 			},
 		},
 	}
